@@ -29,17 +29,5 @@ namespace APITest.Controllers
             })
             .ToArray();
         }
-
-        [HttpGet]
-        public async Task<string> Get(int id)
-        {
-            var myName = await GetName();
-            return "";
-        }
-
-        private Task<string> GetName()
-        {
-            return ;
-        }
     }
 }
