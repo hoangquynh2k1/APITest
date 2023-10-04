@@ -29,5 +29,16 @@ namespace APITest.Controllers
             })
             .ToArray();
         }
+
+        [HttpPost(Name = "GetOne")]
+        public WeatherForecast Get1(int a)
+        {
+            return new WeatherForecast
+            {
+                Date = DateTime.Now,
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            };
+        }
     }
 }
