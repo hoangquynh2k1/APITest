@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -12,11 +11,11 @@ namespace APITest.Models
         public DbSet<Tag> tags { set; get; }                // bảng tag
 
         // chuỗi kết nối với tên db sẽ làm  việc đặt là webdb
-        public const string ConnectStrring = @"Data Source=localhost,1433;Initial Catalog=webdb;User ID=SA;Password=Password123";
+        public const string ConnectStrring = @"Server=localhost;Port=3306;Uid=root;Pwd=P@ssw0rd;Database=MySqlDB;Allow User Variables=true";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectStrring);
+            optionsBuilder.UseMySql(ConnectStrring,ServerVersion.AutoDetect(ConnectStrring));
             optionsBuilder.UseLoggerFactory(GetLoggerFactory());       // bật logger
         }
 

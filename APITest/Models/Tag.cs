@@ -6,9 +6,9 @@ namespace APITest.Models
     public class Tag
     {
         [Key]
-        [StringLength(20)]
-        public string TagId { set; get; }
-        [Column(TypeName = "ntext")]
-        public string Content { set; get; }
+        public int TagId { set; get; }
+
+        [Column(TypeName = "MEDIUMTEXT")]
+        public string? Content { set; get; }
     }
 }

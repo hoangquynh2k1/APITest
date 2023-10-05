@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
 namespace APITest.Models
 {
-    [Table("article")]
+    [Index(nameof(ArticleId))]
     public class Article
     {
         [Key]
